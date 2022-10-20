@@ -1,0 +1,25 @@
+<div class="card p-10 mb-5">
+  <div class="d-flex flex-row justify-content-space-between align-items-center">
+    <h3>{{ task?.title }}</h3>
+    <div class="actions">
+      <button class="btn btn-primary mr-2" (click)="updateTask(task!)">
+        <fa-icon [icon]="faEdit"></fa-icon>
+      </button>
+      <button class="btn btn-danger" (click)="deleteTask(task!)">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <p>{{ task?.description }}</p>
+</div>
+
+<div #editTask class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <app-update-task
+      [task]="task"
+      (onClose)="canceled($event)"
+    ></app-update-task>
+  </div>
+</div>

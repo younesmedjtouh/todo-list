@@ -1,1 +1,169 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap");
+@import "~ngx-toastr/toastr";
+
+:root {
+  --color-primary: #0984e3;
+  --color-secondary: #74b9ff;
+  --color-success: #00b894;
+  --color-danger-primary: #d63031;
+  --color-danger-secondary: #e17055;
+  --color-light-grey: #eceff1;
+  --border-radius: 16px;
+  --box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
+    0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Align Css*/
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-flow: row nowrap;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+/* global styles */
+.bg-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.container {
+  margin: 10px 200px;
+}
+
+.card {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+label {
+  font-weight: 500;
+}
+
+.form-control {
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-light-grey);
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  &-primary {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    &:hover {
+      background-color: var(--color-secondary);
+      border-color: var(--color-secondary);
+    }
+  }
+  &-danger {
+    border: 1px solid var(--color-danger-primary);
+    background-color: var(--color-danger-primary);
+    &:hover {
+      background-color: var(--color-danger-secondary);
+      border-color: var(--color-danger-secondary);
+    }
+  }
+}
+
+button:disabled {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  cursor: not-allowed;
+}
+
+.ng-touched.ng-valid {
+  border-color: var(--color-success);
+}
+
+.ng-touched.ng-invalid {
+  border-color: var(--color-danger-primary);
+}
+
+.alert {
+  color: var(--color-danger-primary);
+  font-size: small;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid var(--color-light-grey);
+  border-radius: var(--border-radius);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
